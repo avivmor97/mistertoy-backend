@@ -1,6 +1,7 @@
 // server/server.js
 import cors from 'cors'
 import express from 'express'
+import path from 'path'
 
 import { toyService } from './services/toy.service.js'
 
@@ -21,6 +22,7 @@ const corsOptions = {
 // Express Configuration:
 app.use(express.json())
 app.use(cors(corsOptions))
+app.use("/",  express.static(path.join(path.resolve(), 'public')))
 
 
 // REST API for Toys
