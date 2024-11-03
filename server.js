@@ -2,11 +2,10 @@
 import cors from 'cors'
 import express from 'express'
 import path from 'path'
-
 import { toyService } from './services/toy.service.js'
 
 const app = express()
-const PORT = 3030
+const PORT = process.env.PORT || 3030
 
 // CORS Configuration
 const corsOptions = {
@@ -22,8 +21,10 @@ const corsOptions = {
 // Express Configuration:
 app.use(express.json())
 app.use(cors(corsOptions))
-app.use("/",  express.static(path.join(path.resolve(), 'public')))
 
+// Serve static files from the "public" directory
+const publicPath = path.join(path.resolve(), 'public')
+app.use(express.static(publicPath))
 
 // REST API for Toys
 app.get('/api/toy', (req, res) => {
@@ -44,8 +45,6 @@ app.get('/api/toy', (req, res) => {
             res.status(400).send('Cannot get toys')
         })
 })
-
-
 
 app.get('/api/toy/:toyId', (req, res) => {
     const { toyId } = req.params
@@ -98,8 +97,12 @@ app.delete('/api/toy/:toyId', (req, res) => {
         })
 })
 
+// Catch-all route to serve index.html for frontend paths
+app.get('*', (req, res) => {
+    res.sendFile(path.join(publicPath, 'index.html'))
+})
+
 // Start server
-const port = process.env.PORT || 3030
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`)
 })
