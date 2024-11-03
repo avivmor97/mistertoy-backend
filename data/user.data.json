@@ -24,5 +24,14 @@
     "phone": "0546857585",
     "purchasedToys": [],
     "credits": 100
+  },
+  {
+    "id": "u6132",
+    "username": "Tinok Matok",
+    "password": "1234",
+    "address": "Tel Aviv",
+    "phone": "0556874555",
+    "purchasedToys": [],
+    "credits": 100
   }
 ]
