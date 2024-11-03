@@ -1,0 +1,28 @@
+[
+  {
+    "id": "u101",
+    "username": "aviv_mor",
+    "password": "1234",
+    "purchasedToys": [
+      "t101",
+      "t102"
+    ],
+    "credits": 100
+  },
+  {
+    "username": "Romy Tamir",
+    "password": "123456",
+    "id": "u8835",
+    "purchasedToys": [],
+    "credits": 100
+  },
+  {
+    "id": "u4278",
+    "username": "aaaa",
+    "password": "aaaa",
+    "address": "rome",
+    "phone": "0546857585",
+    "purchasedToys": [],
+    "credits": 100
+  }
+]

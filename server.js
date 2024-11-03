@@ -3,6 +3,7 @@ import cors from 'cors'
 import express from 'express'
 import path from 'path'
 import { toyService } from './services/toy.service.js'
+import { userService } from './services/user.service.js'
 
 const app = express()
 const PORT = process.env.PORT || 3030
@@ -95,6 +96,30 @@ app.delete('/api/toy/:toyId', (req, res) => {
             console.error('Cannot remove toy', err)
             res.status(400).send('Cannot remove toy')
         })
+})
+
+
+// User Routes//
+
+// Login route
+app.post('/api/login', (req, res) => {
+    const { username, password } = req.body
+    const user = userService.getUserByUsername(username)
+    if (user && user.password === password) {
+        res.send(user)
+    } else {
+        res.status(401).send('Invalid username or password')
+    }
+})
+
+// Signup route
+app.post('/api/signup', (req, res) => {
+    const { username, password, address, phone } = req.body
+    if (userService.getUserByUsername(username)) {
+        return res.status(400).send('Username already exists')
+    }
+    const newUser = userService.createUser({ username, password, address, phone })
+    res.send(newUser)
 })
 
 // Catch-all route to serve index.html for frontend paths
