@@ -20,7 +20,7 @@
       "Box game"
     ],
     "createdAt": 1531026800000,
-    "inStock": false
+    "inStock": true
   },
   {
     "_id": "t103",
@@ -128,7 +128,10 @@
     "_id": "t111",
     "name": "Magic Play Dough Set",
     "price": 12.99,
-    "labels": ["Art", "Baby"],
+    "labels": [
+      "Art",
+      "Baby"
+    ],
     "createdAt": 1641026800000,
     "inStock": true
   },
@@ -136,7 +139,9 @@
     "_id": "t112",
     "name": "Water Gun",
     "price": 15.49,
-    "labels": ["Outdoor"],
+    "labels": [
+      "Outdoor"
+    ],
     "createdAt": 1651026800000,
     "inStock": true
   },
@@ -144,7 +149,10 @@
     "_id": "t113",
     "name": "Wooden Train Set",
     "price": 29.99,
-    "labels": ["On wheels", "Box game"],
+    "labels": [
+      "On wheels",
+      "Box game"
+    ],
     "createdAt": 1571026800000,
     "inStock": false
   },
@@ -152,7 +160,10 @@
     "_id": "t114",
     "name": "Jigsaw Puzzle 1000 Pieces",
     "price": 22.99,
-    "labels": ["Puzzle", "Box game"],
+    "labels": [
+      "Puzzle",
+      "Box game"
+    ],
     "createdAt": 1612026800000,
     "inStock": true
   },
@@ -160,7 +171,9 @@
     "_id": "t115",
     "name": "Inflatable Pool",
     "price": 49.99,
-    "labels": ["Outdoor"],
+    "labels": [
+      "Outdoor"
+    ],
     "createdAt": 1592026800000,
     "inStock": true
   },
@@ -168,7 +181,10 @@
     "_id": "t116",
     "name": "Musical Toy Keyboard",
     "price": 34.99,
-    "labels": ["Battery Powered", "Baby"],
+    "labels": [
+      "Battery Powered",
+      "Baby"
+    ],
     "createdAt": 1541026800000,
     "inStock": false
   },
@@ -176,7 +192,10 @@
     "_id": "t117",
     "name": "Toy Tool Set",
     "price": 19.99,
-    "labels": ["Art", "Box game"],
+    "labels": [
+      "Art",
+      "Box game"
+    ],
     "createdAt": 1532026800000,
     "inStock": true
   },
@@ -184,7 +203,9 @@
     "_id": "t118",
     "name": "Adventure Play Tent",
     "price": 39.99,
-    "labels": ["Outdoor"],
+    "labels": [
+      "Outdoor"
+    ],
     "createdAt": 1623026800000,
     "inStock": false
   },
@@ -192,7 +213,9 @@
     "_id": "t119",
     "name": "Puzzle Cube",
     "price": 9.49,
-    "labels": ["Puzzle"],
+    "labels": [
+      "Puzzle"
+    ],
     "createdAt": 1501026800000,
     "inStock": true
   },
@@ -200,9 +223,11 @@
     "_id": "t120",
     "name": "Educational Math Game",
     "price": 25.99,
-    "labels": ["Box game", "Art"],
+    "labels": [
+      "Box game",
+      "Art"
+    ],
     "createdAt": 1642026800000,
     "inStock": true
   }
-  
 ]
