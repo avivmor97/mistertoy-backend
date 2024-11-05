@@ -1,0 +1,9 @@
+2024-11-05T13:35:41.474Z - INFO - Server running on http://localhost:3030
+5.11.2024, 16:21:27 - INFO - Request was made to: | / 
+5.11.2024, 16:21:27 - INFO - Request was made to: | /assets/index-0NDgKCzU.js 
+5.11.2024, 16:21:27 - INFO - Request was made to: | /assets/index-CBfVBVwL.css 
+5.11.2024, 16:21:27 - INFO - Request was made to: | /assets/ATS3-89l2BPz7.svg 
+5.11.2024, 16:21:27 - INFO - Request was made to: | /vite.svg 
+5.11.2024, 16:21:30 - INFO - Request was made to: | /api/toy/?name=&pageIdx=0&pageSize=6 
+5.11.2024, 16:21:30 - INFO - Request was made to: | /api/toy/?name=&pageIdx=0&pageSize=6 
+5.11.2024, 16:21:30 - DEBUG - Getting Toys with filterBy: | {"txt":"","status":null,"labels":[]} 

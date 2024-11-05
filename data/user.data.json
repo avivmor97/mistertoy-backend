@@ -1,37 +1,34 @@
 [
   {
-    "id": "u101",
+    "_id": "u101",
+    "fullname": "Aviv Mor",
     "username": "aviv_mor",
     "password": "1234",
-    "purchasedToys": [
-      "t101",
-      "t102"
-    ],
-    "credits": 100
+    "credits": 1000,
+    "isAdmin": true
   },
   {
-    "username": "Romy Tamir",
+    "_id": "u8835",
+    "fullname": "Romy Tamir",
+    "username": "romy_tamir",
     "password": "123456",
-    "id": "u8835",
-    "purchasedToys": [],
-    "credits": 100
+    "credits": 1000,
+    "isAdmin": false
   },
   {
-    "id": "u4278",
+    "_id": "u4278",
+    "fullname": "User A",
     "username": "aaaa",
     "password": "aaaa",
-    "address": "rome",
-    "phone": "0546857585",
-    "purchasedToys": [],
-    "credits": 100
+    "credits": 1000,
+    "isAdmin": false
   },
   {
-    "id": "u6132",
-    "username": "Tinok Matok",
+    "_id": "u6132",
+    "fullname": "Tinok Matok",
+    "username": "tinok_matok",
     "password": "1234",
-    "address": "Tel Aviv",
-    "phone": "0556874555",
-    "purchasedToys": [],
-    "credits": 100
+    "credits": 1000,
+    "isAdmin": false
   }
 ]
