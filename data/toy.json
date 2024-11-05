@@ -9,21 +9,7 @@
       "Baby"
     ],
     "createdAt": 1631026800000,
-    "inStock": true,
-    "messages": [
-      {
-        "userId": "u101",
-        "username": "aviv_mor",
-        "content": "My child loves this talking doll!",
-        "createdAt": "2024-11-04T10:00:00Z"
-      },
-      {
-        "userId": "u8835",
-        "username": "romy_tamir",
-        "content": "This doll is adorable and keeps my kid entertained!",
-        "createdAt": "2024-11-04T11:30:00Z"
-      }
-    ]
+    "inStock": true
   },
   {
     "_id": "t102",

@@ -1,111 +1,165 @@
 // server/services/toy.service.js
-import fs from 'fs'
-import path from 'path'
+import { dbService } from '../services/db.service.js'
+import { logger } from '../services/logger.service.js'
+import mongodb from 'mongodb'
+const { ObjectId } = mongodb
 
-const toysFilePath = path.join(path.resolve(), 'data/toy.json')
-
-// Helper functions for file operations
-function _readToys() {
-    const data = fs.readFileSync(toysFilePath, 'utf-8')
-    return JSON.parse(data)
-}
-
-function _writeToys(toys) {
-    fs.writeFileSync(toysFilePath, JSON.stringify(toys, null, 2))
-}
-
-function _generateId() {
-    return 't' + Math.floor(Math.random() * 1000000)
-}
-
-// Toy Service
 export const toyService = {
     query,
     getById,
-    save,
+    add,
+    update,
     remove,
-    addMessage,
+    addToyMsg,
+    removeToyMsg,
 }
 
 // Query function with filtering and pagination
-function query(filterBy = {}, pageIdx = 0, pageSize = 5) {
-    const toys = _readToys()
-    let filteredToys = toys
+async function query(filterBy = {}, sortBy = {}, pageIdx = 0, pageSize = 5) {
+    try {
+        const criteria = _buildCriteria(filterBy);
+        const collection = await dbService.getCollection('toy');
+        
+        // Log pagination details
+        console.log(`Pagination - pageIdx: ${pageIdx}, pageSize: ${pageSize}`);
+        console.log(`Skip value: ${pageIdx * pageSize}, Limit value: ${pageSize}`);
 
-    // Filtering by name
-    if (filterBy.name) {
-        const regex = new RegExp(filterBy.name, 'i')
-        filteredToys = filteredToys.filter(toy => regex.test(toy.name))
+        // Fetch the total count of matching toys for pagination
+        const totalToys = await collection.countDocuments(criteria);
+        
+        // Fetch toys with filtering, sorting, and pagination
+        const toys = await collection.find(criteria)
+            .sort(sortBy)
+            .skip(pageIdx * pageSize)  // Skips records based on the current page
+            .limit(pageSize)            // Limits the number of records per page
+            .toArray();
+        
+       
+        return { toys, totalToys };
+    } catch (err) {
+        logger.error('Cannot find toys', err);
+        throw err;
     }
-
-    // Filtering by inStock status
-    if (filterBy.inStock !== undefined) {
-        const inStock = filterBy.inStock === 'true'
-        filteredToys = filteredToys.filter(toy => toy.inStock === inStock)
-    }
-
-    // Filtering by labels
-    if (filterBy.labels && filterBy.labels.length) {
-        filteredToys = filteredToys.filter(toy =>
-            filterBy.labels.every(label => toy.labels.includes(label))
-        )
-    }
-
-    // Pagination
-    const totalToys = filteredToys.length
-    const paginatedToys = filteredToys.slice(pageIdx * pageSize, (pageIdx + 1) * pageSize)
-
-    return Promise.resolve({ toys: paginatedToys, totalToys })
 }
+
+
 
 // Get toy by ID
-function getById(toyId) {
-    const toys = _readToys()
-    const toy = toys.find(t => t._id === toyId)
-    return toy ? Promise.resolve(toy) : Promise.reject('Toy not found')
-}
-
-// Save (add or update) toy
-function save(toy) {
-    const toys = _readToys()
-    if (toy._id) {
-        const idx = toys.findIndex(t => t._id === toy._id)
-        if (idx === -1) return Promise.reject('Toy not found')
-        toys[idx] = { ...toys[idx], ...toy }
-    } else {
-        toy._id = _generateId()
-        toy.createdAt = Date.now()
-        toy.messages = []
-        toys.push(toy)
+async function getById(toyId) {
+    try {
+        const collection = await dbService.getCollection('toy')
+        const toy = await collection.findOne({ _id: ObjectId(toyId) })
+        if (!toy) throw new Error('Toy not found')
+        return toy
+    } catch (err) {
+        logger.error(`Failed to find toy with ID: ${toyId}`, err)
+        throw err
     }
-    _writeToys(toys)
-    return Promise.resolve(toy)
 }
 
-// Remove toy by ID
-function remove(toyId) {
-    const toys = _readToys()
-    const idx = toys.findIndex(t => t._id === toyId)
-    if (idx === -1) return Promise.reject('Toy not found')
-    toys.splice(idx, 1)
-    _writeToys(toys)
-    return Promise.resolve()
+// Add a new toy
+async function add(toy) {
+    try {
+        const collection = await dbService.getCollection('toy')
+        const newToy = {
+            name: toy.name,
+            price: toy.price,
+            labels: toy.labels || [],
+            inStock: toy.inStock !== undefined ? toy.inStock : true,
+            createdAt: Date.now(),
+            messages: []
+        }
+        const result = await collection.insertOne(newToy)
+        return { ...newToy, _id: result.insertedId }
+    } catch (err) {
+        logger.error('Failed to add toy', err)
+        throw err
+    }
+}
+
+// Update an existing toy
+async function update(toy) {
+    try {
+        const collection = await dbService.getCollection('toy')
+        const toyToUpdate = {
+            name: toy.name,
+            price: toy.price,
+            labels: toy.labels || [],
+            inStock: toy.inStock,
+        }
+        await collection.updateOne(
+            { _id: ObjectId(toy._id) },
+            { $set: toyToUpdate }
+        )
+        return { ...toyToUpdate, _id: toy._id }
+    } catch (err) {
+        logger.error(`Failed to update toy with ID: ${toy._id}`, err)
+        throw err
+    }
+}
+
+// Remove a toy by ID
+async function remove(toyId) {
+    try {
+        const collection = await dbService.getCollection('toy')
+        await collection.deleteOne({ _id: ObjectId(toyId) })
+    } catch (err) {
+        logger.error(`Failed to remove toy with ID: ${toyId}`, err)
+        throw err
+    }
 }
 
 // Add a message to a toy
-function addMessage(toyId, message) {
-    const toys = _readToys()
-    const toy = toys.find(t => t._id === toyId)
-    if (!toy) return Promise.reject('Toy not found')
-
-    if (!toy.messages) toy.messages = []
-    toy.messages.push({
-        userId: message.userId,
-        username: message.username,
-        content: message.content,
-        createdAt: new Date().toISOString()
-    })
-
-    _writeToys(toys)
-    return Promise.resolve(toy)
+async function addToyMsg(toyId, msg) {
+    try {
+        msg.id = ObjectId().toString()  // Unique ID for the message
+        const collection = await dbService.getCollection('toy')
+        await collection.updateOne(
+            { _id: ObjectId(toyId) },
+            { $push: { messages: msg } }
+        )
+        return msg
+    } catch (err) {
+        logger.error(`Failed to add message to toy with ID: ${toyId}`, err)
+        throw err
+    }
 }
+
+// Remove a message from a toy
+async function removeToyMsg(toyId, msgId) {
+    try {
+        const collection = await dbService.getCollection('toy')
+        await collection.updateOne(
+            { _id: ObjectId(toyId) },
+            { $pull: { messages: { id: msgId } } }
+        )
+        return msgId
+    } catch (err) {
+        logger.error(`Failed to remove message from toy with ID: ${toyId}`, err)
+        throw err
+    }
+}
+
+// Helper function to build MongoDB query criteria
+function _buildCriteria(filterBy) {
+    const criteria = {};
+
+    // Filter by name (if provided)
+    if (filterBy.name) {
+        criteria.name = { $regex: filterBy.name, $options: 'i' };
+    }
+
+    // Filter by labels (if provided)
+    if (filterBy.labels && filterBy.labels.length) {
+        criteria.labels = { $in: filterBy.labels };
+    }
+
+    // Properly handle the inStock filter
+    if (filterBy.inStock !== undefined) {
+        // Explicitly convert filterBy.inStock to a boolean
+        criteria.inStock = filterBy.inStock === 'true' || filterBy.inStock === true;
+    }
+
+    return criteria;
+}
+
