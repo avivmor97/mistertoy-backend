@@ -14,27 +14,47 @@ export const authService = {
 }
 
 async function login(username, password) {
-  logger.debug(`auth.service - login with username: ${username}`)
-
-  const user = await userService.getByUsername(username)
-  if (!user) return Promise.reject('Invalid username or password')
-
-  const match = await bcrypt.compare(password, user.password)
-  if (!match) return Promise.reject('Invalid username or password')
-
-  delete user.password
-  console.log('user', user)
-  return user
+    logger.debug(`auth.service - login with username: ${username}`)
+    try {
+        const user = await userService.getByUsername(username)
+        if (!user) {
+            logger.warn(`auth.service - No user found with username: ${username}`)
+            return Promise.reject('Invalid username or password')
+        }
+        const match = await bcrypt.compare(password, user.password)
+        if (!match) {
+            logger.warn(`auth.service - Invalid password attempt for username: ${username}`)
+            return Promise.reject('Invalid username or password')
+        }
+        delete user.password
+        logger.debug(`auth.service - User logged in successfully: ${JSON.stringify(user)}`)
+        return user
+    } catch (err) {
+        logger.error('Error during login:', err)
+        return Promise.reject('Failed to login due to a server error')
+    }
 }
 
-async function signup(username, password, fullname) {
-  const saltRounds = 10
 
-  logger.debug(`auth.service - signup with username: ${username}, fullname: ${fullname}`)
-  if (!username || !password || !fullname) return Promise.reject('Missing required signup information')
+export async function signup({ username, password, fullname, address, phone }) {
+ 
+  const hashedPassword = await bcrypt.hash(password, 10)
 
-  const hash = await bcrypt.hash(password, saltRounds)
-  return userService.add({ username, password: hash, fullname })
+  const newUser = {
+      username,
+      password: hashedPassword,
+      fullname,
+      address,
+      phone,
+      credits: 1000,
+      isAdmin: false
+  }
+
+  // Save the new user via userService
+  const account = await userService.add(newUser)
+  if (!account) throw new Error('Account creation failed')
+  logger.debug('New account created: ', account)
+  return account
 }
 
 function getLoginToken(user) {

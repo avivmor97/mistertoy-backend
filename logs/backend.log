@@ -164,3 +164,157 @@
 5.11.2024, 17:07:25 - INFO - Request was made to: | /api/toy/?name=&pageIdx=1&pageSize=6 
 5.11.2024, 17:12:45 - INFO - Connected to MongoDB: toy_db 
 5.11.2024, 17:13:09 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 17:33:09 - INFO - Request was made to: | /api/toy/?name=&pageIdx=0&pageSize=6 
+5.11.2024, 17:33:09 - DEBUG - Getting Toys with filterBy: | {"txt":"","status":null,"labels":[]} 
+5.11.2024, 17:33:10 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 17:33:11 - INFO - Request was made to: | /api/toy/?name=&pageIdx=1&pageSize=6 
+5.11.2024, 17:33:11 - DEBUG - Getting Toys with filterBy: | {"txt":"","status":null,"labels":[]} 
+5.11.2024, 17:33:12 - INFO - Request was made to: | /api/toy/?name=&pageIdx=2&pageSize=6 
+5.11.2024, 17:33:12 - DEBUG - Getting Toys with filterBy: | {"txt":"","status":null,"labels":[]} 
+5.11.2024, 17:33:13 - INFO - Request was made to: | /api/toy/?name=&pageIdx=3&pageSize=6 
+5.11.2024, 17:33:13 - DEBUG - Getting Toys with filterBy: | {"txt":"","status":null,"labels":[]} 
+5.11.2024, 17:36:57 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 17:40:33 - DEBUG - auth.service - signup with username: user1, fullname: undefined 
+5.11.2024, 17:40:33 - ERROR - Failed to signup Missing required signup information 
+5.11.2024, 17:43:37 - DEBUG - auth.service - signup with username: [object Object], fullname: undefined 
+5.11.2024, 17:43:37 - ERROR - Failed to signup Missing required signup information 
+5.11.2024, 17:46:18 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 17:46:18 - DEBUG - New account created:  | {"username":"user1","password":"$2b$10$NwvY0/KgwcraKj3BTHyf.O77UNIEk1mdvsR0E3U9qe3wdyxpi4oy.","address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z","_id":"672a3dca0eacf7c1c126ac08"} 
+5.11.2024, 17:46:18 - DEBUG - auth.route - new account created: {"username":"user1","password":"$2b$10$NwvY0/KgwcraKj3BTHyf.O77UNIEk1mdvsR0E3U9qe3wdyxpi4oy.","address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z","_id":"672a3dca0eacf7c1c126ac08"} 
+5.11.2024, 17:46:18 - DEBUG - auth.service - login with username: user1 
+5.11.2024, 17:49:25 - DEBUG - auth.service - login with username: Romy Tamir 
+5.11.2024, 17:49:25 - ERROR - Failed to Login Invalid username or password 
+5.11.2024, 17:52:22 - DEBUG - auth.service - login with username: Romy Tamir 
+5.11.2024, 17:52:23 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 17:52:23 - WARN - auth.service - No user found with username: Romy Tamir 
+5.11.2024, 17:52:23 - ERROR - Failed to Login Invalid username or password 
+5.11.2024, 17:53:14 - DEBUG - auth.service - login with username: Romy Tamir 
+5.11.2024, 17:53:14 - WARN - auth.service - No user found with username: Romy Tamir 
+5.11.2024, 17:53:14 - ERROR - Failed to Login Invalid username or password 
+5.11.2024, 17:53:48 - DEBUG - auth.service - login with username: user1 
+5.11.2024, 17:53:48 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 17:53:48 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:01:03 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 18:01:52 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 18:02:07 - DEBUG - auth.service - login with username: user1 
+5.11.2024, 18:02:07 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:02:07 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:05:30 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 18:06:02 - DEBUG - auth.service - login with username: user1 
+5.11.2024, 18:06:02 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:06:02 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:07:30 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 18:09:58 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 18:10:08 - DEBUG - auth.service - login with username: user1 
+5.11.2024, 18:10:08 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:10:08 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:12:23 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 18:13:05 - DEBUG - auth.service - login with username: user1 
+5.11.2024, 18:13:05 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:13:05 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:14:49 - DEBUG - auth.service - login with username: user1 
+5.11.2024, 18:14:49 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:14:49 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:20:00 - INFO - Connected to MongoDB: toy_db 
+5.11.2024, 18:20:07 - DEBUG - auth.service - login with username: user1 
+5.11.2024, 18:20:08 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:20:08 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:23:12 - DEBUG - auth.service - login with username: user1 
+5.11.2024, 18:23:12 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:23:12 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:25:53 - DEBUG - auth.service - login with username: user1 
+5.11.2024, 18:25:53 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+5.11.2024, 18:25:53 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 10:49:53 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 10:50:01 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 10:50:02 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 10:50:02 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 12:28:54 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 12:29:27 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 12:29:28 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 12:29:28 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 12:32:48 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 12:32:48 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 12:32:48 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 12:34:33 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 12:36:02 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 12:39:05 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 12:39:06 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 12:39:06 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 13:06:04 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 13:06:12 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 13:06:12 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 13:06:12 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 13:10:28 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 13:15:17 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 13:15:17 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 13:15:17 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 13:26:23 - ERROR - Failed to find toy with ID: toy | TypeError: Class constructor ObjectId cannot be invoked without 'new' 
+6.11.2024, 13:26:23 - ERROR - Cannot get toy | TypeError: Class constructor ObjectId cannot be invoked without 'new' 
+6.11.2024, 13:26:28 - ERROR - Failed to find toy with ID: toy | TypeError: Class constructor ObjectId cannot be invoked without 'new' 
+6.11.2024, 13:26:28 - ERROR - Cannot get toy | TypeError: Class constructor ObjectId cannot be invoked without 'new' 
+6.11.2024, 15:22:19 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 15:22:20 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 15:22:20 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 15:35:44 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 15:37:32 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 15:40:35 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 15:41:10 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 15:41:10 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 15:41:10 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 15:50:55 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 15:51:11 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 15:51:11 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 15:51:11 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 15:52:21 - ERROR - Failed to add message to toy with ID: 672a3293bae660d7c8a96eaf | TypeError: Class constructor ObjectId cannot be invoked without 'new' 
+6.11.2024, 15:56:49 - ERROR - Failed to add message to toy with ID: 672a3293bae660d7c8a96eaf | TypeError: Cannot set properties of undefined (setting 'id') 
+6.11.2024, 15:57:51 - ERROR - Failed to add message to toy with ID: 672a3293bae660d7c8a96eaf | Error: Message content is missing 
+6.11.2024, 16:00:07 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 16:00:18 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 16:00:19 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:00:19 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:05:30 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 16:05:30 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:05:30 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:09:05 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 16:09:05 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:09:05 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:12:29 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 16:12:44 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 16:12:44 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:12:44 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:19:01 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 16:21:10 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 16:21:11 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 16:21:11 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:21:11 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:24:58 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 16:24:58 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:24:58 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:26:10 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 16:26:10 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:26:10 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:33:06 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 16:39:45 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 16:41:36 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 16:43:54 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 16:43:54 - ERROR - Failed to add message to toy with ID: 672a3293bae660d7c8a96eaf | TypeError: Class constructor ObjectId cannot be invoked without 'new' 
+6.11.2024, 16:44:30 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 16:47:44 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 16:47:44 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:47:44 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:55:19 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 16:55:19 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:55:19 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:58:54 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 16:58:54 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 16:58:54 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 17:01:09 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 17:01:09 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 17:01:09 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 17:10:55 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 17:10:55 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 17:10:55 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 17:15:30 - DEBUG - auth.service - login with username: user1 
+6.11.2024, 17:15:30 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
+6.11.2024, 17:15:30 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 

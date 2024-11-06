@@ -3,9 +3,9 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 
-import { toyService } from './services/toy.service.js';
-import { userService } from './services/user.service.js';
 import { authRoutes } from './api/auth/auth.routes.js';
+import { toyService } from './services/toy.service.js'; // Including toyService directly
+import { userRoutes } from './api/user/user.routes.js';
 import { logger } from './services/logger.service.js';
 
 const app = express();
@@ -18,6 +18,7 @@ const corsOptions = {
         'http://localhost:8080',
         'http://127.0.0.1:5173',
         'http://localhost:5173',
+        'http://localhost:5174',
         'https://avivs-toy-shop.onrender.com'
     ],
     credentials: true
@@ -25,15 +26,18 @@ const corsOptions = {
 
 // Express Configuration
 app.use(express.json());
-app.use(cookieParser());  // Parse cookies for authentication
+app.use(cookieParser());
+
 app.use(cors(corsOptions));
 
 // Serve static files from the "public" directory
 const publicPath = path.join(path.resolve(), 'public');
 app.use(express.static(publicPath));
 
-// Integrate auth routes
-app.use('/api/auth', authRoutes);  // Authentication routes
+// Integrate auth and user routes
+app.use('/api/auth', authRoutes);   // Authentication routes
+app.use('/api/user', userRoutes);   // User routes
+
 
 // REST API for Toys
 app.get('/api/toy', (req, res) => {
@@ -104,6 +108,38 @@ app.delete('/api/toy/:toyId', (req, res) => {
             logger.error('Cannot remove toy', err);
             res.status(400).send('Cannot remove toy');
         });
+});
+
+
+app.post('/api/toy/:toyId/message', async (req, res) => {
+    
+    
+    const { toyId } = req.params;
+    const msg = req.body;
+   
+   
+    if (!msg || !msg.content) {  // Validate that the message has content
+        return res.status(400).send({ error: 'Message content is missing' });
+    }
+    try {
+        const addedMsg = await toyService.addToyMsg(toyId, msg);
+        res.send(addedMsg);
+    } catch (err) {
+        console.error('Cannot add message to toy', err);
+        res.status(400).send('Cannot add message');
+    }
+});
+
+
+app.delete('/api/toy/toyId/:msgId',  async (req, res) => {
+    const { toyId, msgId } = req.params;
+    try {
+        const updatedToy = await toyService.removeToyMsg(toyId, msgId);
+        res.send(updatedToy);
+    } catch (err) {
+        console.error('Cannot remove message from toy', err);
+        res.status(400).send('Cannot remove message');
+    }
 });
 
 // Catch-all route to serve index.html for frontend paths
