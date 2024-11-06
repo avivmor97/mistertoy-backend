@@ -319,3 +319,4 @@
 6.11.2024, 17:15:30 - DEBUG - auth.service - User logged in successfully: {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
 6.11.2024, 17:15:30 - INFO - User login:  | {"_id":"672a3dca0eacf7c1c126ac08","username":"user1","fullname":null,"address":"lali","phone":"0211221121","credits":100,"purchasedToys":[],"isAdmin":false,"createdAt":"2024-11-05T15:46:17.947Z"} 
 6.11.2024, 17:22:46 - INFO - Connected to MongoDB: toy_db 
+6.11.2024, 17:35:30 - INFO - Connected to MongoDB: toy_db 
