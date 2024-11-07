@@ -1,6 +1,6 @@
 // server/services/user.service.js
 import { dbService } from './db.service.js'
-import { logger } from '../../mistertoy-backend/services/logger.service.js'
+import { logger } from './logger.service.js'
 import mongodb from 'mongodb'
 const { ObjectId } = mongodb
 
